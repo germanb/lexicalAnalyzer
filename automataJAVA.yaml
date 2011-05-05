@@ -24,8 +24,15 @@ delta:
   q1:
     letra:q1
     numero:q1
-    ';':qf
+    ';':qr
     " ":qf
+    ';':qr
+    '[':qr
+    ']':qr
+    '{':qr
+    '}':qr
+    '(':qr
+    ')':qr
   q2:
     caracter:q3
   q3:
@@ -55,6 +62,8 @@ delta:
 
 
 finals:qf
+
+finalsAndReset:qr
 
 
 

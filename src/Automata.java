@@ -12,6 +12,7 @@ public class Automata {
 
 	String q;
 	String finals;
+	String finalsAndReset;
 	Map<String, Map<String, String>> delta;
 	Map<String, Object> automata;
 
@@ -22,7 +23,7 @@ public class Automata {
 	@SuppressWarnings("unchecked")
 	public Automata() throws Exception{
 
-		// Levantamos desde el archivo de configuracion del autómata
+		// Levantamos desde el archivo de configuracion del autï¿½mata
 		File automataConfig = new File("automataJAVA.yaml");
 		automata = Yaml.loadType(automataConfig, HashMap.class);
 
@@ -31,7 +32,9 @@ public class Automata {
 
 		// Setea los estados finales
 		finals = (String) automata.get("finals");
-
+		//estados finales que vuelven un caracter atras.
+		finalsAndReset = (String) automata.get("finalsAndReset");
+		
 		// Setea la funcion delta
 		delta = new HashMap<String, Map<String, String>>();
 
@@ -137,7 +140,7 @@ public class Automata {
 				since = i;
 			}
 			/* 
-			 * Cuando terminó en un estado
+			 * Cuando terminï¿½ en un estado
 			 * que no es final -> Error
 			 */
 			if(q == null){
@@ -145,8 +148,13 @@ public class Automata {
 				return response;
 			}
 
+			if(isFinalAndReset(q)){
+				i= i-1;
+				break;
+			}
+			
 			/*
-			 * Llegó a estado final. 
+			 * Llegï¿½ a estado final. 
 			 * Resetea el estado a inicial
 			 */
 			if (isFinalState(q)){
@@ -155,16 +163,20 @@ public class Automata {
 		}
 
 		/* 
-		 * Cuando terminó en un estado
-		 * que no es final -> Excepción
+		 * Cuando terminï¿½ en un estado
+		 * que no es final -> Excepciï¿½n
 		 */
-		if(!isFinalState(q)){
+		if(!isFinalState(q) && !isFinalAndReset(q)){
 			response.set(since, i+1, input.substring(since, i+1), true, "Error desde # hasta $ - "+q+" No es estado final");
 			return response;
 		}
 
 		response.set(since, i+1, input.substring(since, i+1), false, null);
 		return response;
+	}
+
+	private boolean isFinalAndReset(String q2) {
+		return StringUtils.contains(finalsAndReset, q);
 	}
 
 	private boolean isFinalState(String q) {

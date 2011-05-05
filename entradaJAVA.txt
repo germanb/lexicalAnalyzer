@@ -1,16 +1,16 @@
-	private static String fileToString ( File file ) throws Exception {
-		StringBuffer buffer = new StringBuffer ( ) ;
-		String line ;
-		FileReader fReader ;
-		BufferedReader bReader ;
+	private static String fileToString (File file) throws Exception{
+		StringBuffer buffer = new StringBuffer ();
+		String line;
+		FileReader fReader;
+		BufferedReader bReader;
 
-		fReader = new FileReader ( file ) ;
-		bReader = new BufferedReader ( fReader ) ;
-		while ( ( line = readLine ( ) ) != null ) {
-			append ( line + "\n" ) ;
+		fReader = new FileReader (file);
+		bReader = new BufferedReader (fReader);
+		while ((line = readLine ()) != null){
+			append ( line + "\n" );
 		}
-		close ( ) ;
-		close ( ) ;
+		close();
+		close();
 
-		return toString ( ) ;
+		return toString();
 	}
