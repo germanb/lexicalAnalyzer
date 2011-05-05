@@ -4,7 +4,7 @@
 		FileReader fReader;
 		BufferedReader bReader;
 
-		fReader = new FileReader (file);
+		fReader = new FileReader (file.algo);
 		bReader = new BufferedReader (fReader);
 		while ((line = readLine ()) != null){
 			append ( line + "\n" );

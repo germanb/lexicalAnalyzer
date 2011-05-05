@@ -31,7 +31,7 @@ igual : =
 reserved word : new
 Identificador : FileReader
 parentesis : (
-Identificador : file
+Identificador : file.algo
 parentesis : )
 end : ;
 Identificador : bReader

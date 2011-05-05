@@ -24,6 +24,7 @@ delta:
   q1:
     letra:q1
     numero:q1
+    '.':q1
     ';':qr
     " ":qf
     ';':qr
