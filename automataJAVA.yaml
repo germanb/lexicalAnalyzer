@@ -1,0 +1,61 @@
+initial:q0
+
+delta:
+  q0:
+    '+':q10
+    '=':q9
+    '&':q8
+    numero:q6
+    '"':q4
+    "'":q2
+    letra:q1
+    " ":q0
+    '*':qf
+    '/':qf
+    ';':qf
+    '[':qf
+    ']':qf
+    '{':qf
+    '}':qf
+    '(':qf
+    ')':qf
+    enterytab:q0
+    '!':q11
+  q1:
+    letra:q1
+    numero:q1
+    ';':qf
+    " ":qf
+  q2:
+    caracter:q3
+  q3:
+    "'":qf
+  q4:
+    caracter-:q5
+  q5:
+    caracter-:q5
+    '"':qf
+  q6:
+    numero:q6
+    '.':q7
+    ';':qf
+  q7:
+    numero:q7
+    ';':qf
+  q8:
+    '&':qf
+  q9:
+    '=':qf
+    ' ':qf
+  q10:
+    '+':qf
+    ' ':qf
+  q11:
+    '=':qf
+
+
+finals:qf
+
+
+
+	
