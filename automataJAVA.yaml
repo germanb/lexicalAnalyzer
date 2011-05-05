@@ -40,9 +40,11 @@ delta:
     "'":qf
   q4:
     caracter-:q5
+    '"':qf
   q5:
     caracter-:q5
     '"':qf
+    " ":q5
   q6:
     numero:q6
     '.':q7

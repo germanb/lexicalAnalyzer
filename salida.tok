@@ -3,8 +3,9 @@ reserved word : static
 type : String
 Identificador : fileToString
 parentesis : (
-Identificador : File
-Identificador : file
+Error desde 37 hasta 40 - null No es estado final : 'Fi
+Identificador : le
+Error desde 43 hasta 48 - null No es estado final : file'
 parentesis : )
 Identificador : throws
 Identificador : Exception
@@ -15,6 +16,7 @@ igual : =
 reserved word : new
 Identificador : StringBuffer
 parentesis : (
+Identificador : ""
 parentesis : )
 end : ;
 type : String

@@ -1,5 +1,5 @@
-	private static String fileToString (File file) throws Exception{
-		StringBuffer buffer = new StringBuffer ();
+	private static String fileToString ('File file') throws Exception{
+		StringBuffer buffer = new StringBuffer("");
 		String line;
 		FileReader fReader;
 		BufferedReader bReader;
