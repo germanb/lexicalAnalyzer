@@ -34,10 +34,13 @@ delta:
     '}':qr
     '(':qr
     ')':qr
+    "'":qr
   q2:
     caracter:q3
   q3:
+    caracter--:qe
     "'":qf
+    ' ':qe
   q4:
     caracter-:q5
     '"':qf
@@ -45,6 +48,8 @@ delta:
     caracter-:q5
     '"':qf
     " ":q5
+    "	":q5
+    enter:qe
   q6:
     numero:q6
     '.':q7
@@ -66,7 +71,7 @@ delta:
 
 finals:qf
 
-finalsAndReset:qr
+finalsAndReset:qrqe
 
 
 

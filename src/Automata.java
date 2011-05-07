@@ -104,10 +104,17 @@ public class Automata {
 				}else if ("enterytab".equals(entry2.getKey())){
 					temp2.put("\n", entry2.getValue());
 					temp2.put("\t", entry2.getValue());
-				}if ("caracter-".equals(entry2.getKey())){
+				}else if ("caracter-".equals(entry2.getKey())){
 					for (Iterator iterator = ascii.iterator(); iterator.hasNext();) {
 						Character character = (Character) iterator.next();
 						if (!StringUtils.contains("\"",character)){
+							temp2.put(CharUtils.toString(character), entry2.getValue());
+						}
+					}
+				}else if("caracter--".equals(entry2.getKey())){
+					for (Iterator iterator = ascii.iterator(); iterator.hasNext();) {
+						Character character = (Character) iterator.next();
+						if (!StringUtils.contains("'",character)){
 							temp2.put(CharUtils.toString(character), entry2.getValue());
 						}
 					}
@@ -166,7 +173,7 @@ public class Automata {
 		 * Cuando termin� en un estado
 		 * que no es final -> Excepci�n
 		 */
-		if(!isFinalState(q) && !isFinalAndReset(q)){
+		if(("qe".equals(q)) || (!isFinalState(q) && !isFinalAndReset(q))){
 			response.set(since, i+1, input.substring(since, i+1), true, "Error desde # hasta $ - "+q+" No es estado final");
 			return response;
 		}
