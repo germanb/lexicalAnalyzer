@@ -9,6 +9,8 @@ public class AutomataResponse {
 
 	String lexeme;
 
+	String lastStatus;
+
 	Boolean error;
 	String errorDetail;
 
@@ -36,6 +38,14 @@ public class AutomataResponse {
 		this.lexeme = lexeme;
 	}
 
+	public String getLastStatus() {
+		return lastStatus;
+	}
+
+	public void setLastStatus(String lastStatus) {
+		this.lastStatus = lastStatus;
+	}
+
 	public Boolean isError() {
 		return error;
 	}
@@ -52,10 +62,11 @@ public class AutomataResponse {
 		this.errorDetail = errorDetail;
 	}
 
-	public void set(int since, int to, String lexeme, boolean error, String errorDetail){
+	public void set(int since, int to, String lexeme, String lastStatus, boolean error, String errorDetail){
 		this.since = since;
 		this.to = to;
 		this.lexeme = lexeme;
+		this.lastStatus = lastStatus;
 		this.error = error;
 
 		String detail = StringUtils.replace(errorDetail, "#", Integer.toString(since));

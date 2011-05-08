@@ -11,7 +11,7 @@ delta:
     letra:q1
     " ":q0
     '*':qf
-    '/':qf
+    '/':q12
     ';':qf
     '[':qf
     ']':qf
@@ -35,12 +35,14 @@ delta:
     '(':qr
     ')':qr
     "'":qr
+    '"':qr
+    enterytab:qf
   q2:
     caracter:q3
   q3:
-    caracter--:qe
+    caracter--:qe1
     "'":qf
-    ' ':qe
+    ' ':qe1
   q4:
     caracter-:q5
     '"':qf
@@ -49,7 +51,7 @@ delta:
     '"':qf
     " ":q5
     "	":q5
-    enter:qe
+    enter:qe2
   q6:
     numero:q6
     '.':q7
@@ -67,11 +69,25 @@ delta:
     ' ':qf
   q11:
     '=':qf
+  q12:
+    '*':q13
+    caracter---:q12
+  q13:
+    '*':q14
+    enterytab:q13
+    caracter---:q13
+    " ":q13
+  q14:
+    '/':q0
+    '*':q14
+    enterytab:q13
+    caracter----:q13
+    " ":q13
 
 
 finals:qf
 
-finalsAndReset:qrqe
+finalsAndReset:qrqe1qe2
 
 
 

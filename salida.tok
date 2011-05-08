@@ -1,82 +1,124 @@
-privado : private
-reserved word : static
-type : String
-Identificador : fileToString
-parentesis : (
-Error desde 37 hasta 39 - qe No es estado final : 'F
-Identificador : ile
-Identificador : file
-Error desde 47 hasta 49 - qe No es estado final : ')
-Identificador : throws
-Identificador : Exception
-llave : {
-Identificador : StringBuffer
-Identificador : buffer
-igual : =
-reserved word : new
-Identificador : StringBuffer
-parentesis : (
-Error desde 109 hasta 111 - null No es estado final : "
-
-Error desde 112 hasta 117 - null No es estado final : 	");
-
-type : String
-Identificador : line
-end : ;
-Identificador : FileReader
-Identificador : fReader
-end : ;
-Identificador : BufferedReader
-Identificador : bReader
-end : ;
-Identificador : fReader
-igual : =
-reserved word : new
-Identificador : FileReader
-parentesis : (
-Identificador : file.algo
-parentesis : )
-end : ;
-Identificador : bReader
-igual : =
-reserved word : new
-Identificador : BufferedReader
-parentesis : (
-Identificador : fReader
-parentesis : )
-end : ;
-Identificador : while
-parentesis : (
-parentesis : (
-Identificador : line
-igual : =
-Identificador : readLine
-parentesis : (
-parentesis : )
-parentesis : )
-Identificador : !=
-reserved word : null
-parentesis : )
-llave : {
-Identificador : append
-parentesis : (
-Identificador : line
-suma : +
-Identificador : "\n"
-parentesis : )
-end : ;
-llave : }
-Identificador : close
-parentesis : (
-parentesis : )
-end : ;
-Identificador : close
-parentesis : (
-parentesis : )
-end : ;
-reserved word : return
-Identificador : toString
-parentesis : (
-parentesis : )
-end : ;
-llave : }
+(0,private)
+(0,static)
+warning: longitud mayor a 16 caracteres
+(9,a234567890123456)
+(9,jaja)
+(9,comela)
+(9,puto)
+(9,"#$%&/()=)(/&%$#")
+(99,Error desde 98 hasta 101 - error lexicografico) 
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(99,Error desde 122 hasta 127 - error lexicografico) 
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(1,*)
+(9,bbbb)
+(9,fileToString)
+(4,()
+(9,'F)
+(9,ile)
+(9,file)
+(9,'))
+(0,throws)
+(9,Exception)
+(4,{)
+(9,StringBuffer)
+(9,buffer)
+(2,=)
+(0,new)
+(9,StringBuffer)
+(4,()
+(99,Error desde 233 hasta 235 - error lexicografico) 
+(9,");)
+(9,String)
+(9,line)
+(6,;)
+(9,FileReader)
+(9,fReader)
+(6,;)
+(9,BufferedReader)
+(9,bReader)
+(6,;)
+(9,fReader)
+(2,=)
+(0,new)
+(9,FileReader)
+(4,()
+(9,file.algo)
+(4,))
+(6,;)
+(9,bReader)
+(2,=)
+(0,new)
+(9,BufferedReader)
+(4,()
+(9,fReader)
+(4,))
+(6,;)
+(0,while)
+(4,()
+(4,()
+(9,line)
+(2,=)
+(9,readLine)
+(4,()
+(4,))
+(4,))
+(3,!=)
+(9,null)
+(4,))
+(4,{)
+(9,append)
+(4,()
+(9,line)
+(1,+)
+(9,"\n")
+(4,))
+(6,;)
+(4,})
+(9,close)
+(4,()
+(4,))
+(6,;)
+(9,close)
+(4,()
+(4,))
+(6,;)
+(0,return)
+(9,toString)
+(4,()
+(4,))
+(6,;)
+(4,})

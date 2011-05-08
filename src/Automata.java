@@ -118,6 +118,22 @@ public class Automata {
 							temp2.put(CharUtils.toString(character), entry2.getValue());
 						}
 					}
+				}else if("caracter---".equals(entry2.getKey())){
+					for (Iterator iterator = ascii.iterator(); iterator.hasNext();) {
+						Character character = (Character) iterator.next();
+						if (!StringUtils.contains("*",character)){
+							temp2.put(CharUtils.toString(character), entry2.getValue());
+						}
+					}
+				}else if("caracter----".equals(entry2.getKey())){
+					for (Iterator iterator = ascii.iterator(); iterator.hasNext();) {
+						Character character = (Character) iterator.next();
+						if (!StringUtils.contains("*/",character)){
+							temp2.put(CharUtils.toString(character), entry2.getValue());
+						}
+					}
+				}else if ("enter".equals(entry2.getKey())){
+					temp2.put("\n", entry2.getValue());
 				}else{
 					temp2.put(entry2.getKey(), entry2.getValue());
 				}
@@ -138,10 +154,12 @@ public class Automata {
 		q = (String) automata.get("initial");
 
 		int i = since;
+		String lastq = "";
 		for (; i < input.length()-1; i++) {
 
 			// Calcula el delta
 			String c = CharUtils.toString(input.charAt(i));
+			lastq = q;
 			q = delta(q,c);
 			if ("q0".equals(q)){
 				since = i;
@@ -151,7 +169,7 @@ public class Automata {
 			 * que no es final -> Error
 			 */
 			if(q == null){
-				response.set(since, i+1, input.substring(since, i+1), true, "Error desde # hasta $ - "+q+" No es estado final");
+				response.set(since, i+1, input.substring(since, i+1), lastq, true, "Error desde # hasta $ - error lexicografico");
 				return response;
 			}
 
@@ -174,11 +192,17 @@ public class Automata {
 		 * que no es final -> Excepci�n
 		 */
 		if(("qe".equals(q)) || (!isFinalState(q) && !isFinalAndReset(q))){
-			response.set(since, i+1, input.substring(since, i+1), true, "Error desde # hasta $ - "+q+" No es estado final");
+			String error = "";
+			if("qe1".equals(q)){
+				error= "caracter invalido";
+			}else if ("qe2".equals(q)){
+				error="cadena de texto invalida";
+			}
+			response.set(since, i+1, input.substring(since, i+1), lastq, true, "Error desde # hasta $ - "+ error);
 			return response;
 		}
 
-		response.set(since, i+1, input.substring(since, i+1), false, null);
+		response.set(since, i+1, input.substring(since, i+1), lastq, false, null);
 		return response;
 	}
 

@@ -1,4 +1,8 @@
-	private static String fileToString ('File file') throws Exception{
+	private static /* String LALA pepe*/
+	a234567890123456789
+	jaja
+	comela
+	puto"#$%&/()=)(/&%$#"    a**********************aaaa****************bbbb fileToString ('File file') throws Exception{
 		StringBuffer buffer = new StringBuffer("
 		");
 		String line;
@@ -11,7 +15,7 @@
 			append ( line + "\n" );
 		}
 		close();
-		close()
+		close();
 
 		return toString();
 	}

@@ -22,15 +22,20 @@ public class LexicalAnalyzer {
 			// Checkeo de errores
 			if (response.isError()){
 
-				array.add(response.getErrorDetail()+" : "+response.getLexeme());
+				array.add("(99," + response.getErrorDetail() + ") ");
 
 			}else{
 
 				String lexeme = StringUtils.trimToEmpty(response.getLexeme());
+
+				if (true && ("q1".equals(response.lastStatus)) && (lexeme.length()>16)){ //TODO: agregar control solo para java
+					lexeme = StringUtils.substring(lexeme, 0, 16);
+					array.add("warning: longitud mayor a 16 caracteres");
+				}
+
+				String token =  getToken(lexeme);
 	
-				String token = getToken(lexeme);
-	
-				array.add(token+" : "+lexeme);
+				array.add("(" + token +","+lexeme+")");
 
 			}
 
@@ -44,6 +49,6 @@ public class LexicalAnalyzer {
 		File tokenConfig = new File("tokenJAVA.config");
 		Map<String, String> map = Yaml.loadType(tokenConfig, HashMap.class);
 		String result = map.get(token);
-		return (result == null) ? "Identificador" : result;
+		return (result == null) ? "9" : result;
 	}
 }
