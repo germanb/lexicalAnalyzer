@@ -191,12 +191,14 @@ public class Automata {
 		 * Cuando termin� en un estado
 		 * que no es final -> Excepci�n
 		 */
-		if(("qe".equals(q)) || (!isFinalState(q) && !isFinalAndReset(q))){
+		if(("qe1".equals(q)) || ("qe2".equals(q)) || (!isFinalState(q) && !isFinalAndReset(q))){
 			String error = "";
 			if("qe1".equals(q)){
 				error= "caracter invalido";
 			}else if ("qe2".equals(q)){
 				error="cadena de texto invalida";
+			}else{
+				error="error lexicografico";
 			}
 			response.set(since, i+1, input.substring(since, i+1), lastq, true, "Error desde # hasta $ - "+ error);
 			return response;

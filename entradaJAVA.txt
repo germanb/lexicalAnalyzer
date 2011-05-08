@@ -1,21 +1,2 @@
-	private static /* String LALA pepe*/
-	a234567890123456789
-	jaja
-	comela
-	puto"#$%&/()=)(/&%$#"    a**********************aaaa****************bbbb fileToString ('File file') throws Exception{
-		StringBuffer buffer = new StringBuffer("
-		");
-		String line;
-		FileReader fReader;
-		BufferedReader bReader;
-
-		fReader = new FileReader (file.algo);
-		bReader = new BufferedReader (fReader);
-		while ((line = readLine ()) != null){
-			append ( line + "\n" );
-		}
-		close();
-		close();
-
-		return toString();
-	}
+");
+a
