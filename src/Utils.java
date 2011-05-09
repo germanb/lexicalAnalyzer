@@ -90,6 +90,12 @@ public class Utils {
 					temp2.put("\n", entry2.getValue());
 					temp2.put("\t", entry2.getValue());
 
+				}else if ("blancoenterytab".equals(key)) {
+
+					temp2.put(" ", entry2.getValue());
+					temp2.put("\n", entry2.getValue());
+					temp2.put("\t", entry2.getValue());
+
 				}else
 					temp2.put(key, entry2.getValue());
 			}

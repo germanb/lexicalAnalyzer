@@ -1,0 +1,32 @@
+digraph finite_state_machine {
+	rankdir=LR;
+	size="8,5"
+	node [shape = doublecircle]; q3 q4 qf;
+	node [shape = circle];
+	q0 -> q1 [ label = "<" ];
+	q0 -> q0 [ label = "blanco,enter,tab" ];
+	q0 -> q2 [ label = "ASCII-" ];
+	q0 -> qf [ label = ">,/" ];
+
+	q1 -> q5 [ label = "!" ];
+	q1 -> q4 [ label = "ASCII---,enter,tab,blanco" ];
+	
+	q2 -> q2 [ label = "ASCII--" ];
+	q2 -> q3 [ label = "<,>,=,blanco" ];
+
+	q5 -> q6 [ label = "-" ];
+	q5 -> q2 [ label = "ASCII----" ];
+
+	q6 -> q7 [ label = "-" ];
+	q6 -> q2 [ label = "ASCII----" ];
+
+	q7 -> q7 [ label = "ASCII----,blanco,enter,tab" ];
+	q7 -> q8 [ label = "-" ];
+
+	q8 -> q7 [ label = "ASCII----" ];
+	q8 -> q9 [ label = "-" ];
+	
+	q9 -> q7 [ label = "ASCII-----" ];
+	q9 -> q9 [ label = "-" ];
+	q9 -> q0 [ label = ">" ];
+}

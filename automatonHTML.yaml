@@ -3,31 +3,31 @@ initial:q0
 delta:
   q0:
     '<':q1
-    '>':q1
-    '/':q1
-    " ":q0
-    enterytab:q0
+    '>':qf
+    '/':qf
+    blancoenterytab:q0
     ASCII-:q2
+
   q1:
     '!':q5
     ASCII---:q4
-    enterytab:q4
-    " ":q4
+    blancoenterytab:q4
   q2:
     ASCII--:q2
-    " ":q3
+    blancoenterytab:q3
     '<':q3
     '>':q3
     '=':q3
   q5:
     '-':q6
+    ASCII----:q2
   q6:
     '-':q7
+    ASCII----:q2
   q7:
     ASCII----:q7
     '-':q8
-    enterytab:q7
-    " ":q7
+    blancoenterytab:q7
   q8:
     ASCII----:q7
     '-':q9
@@ -41,4 +41,4 @@ finals:qf
 finalsAndReset:q3q4
 
 errors:
-  default:"Error lexicogr·fico"
+  default:"Error lexicogr√°fico"
