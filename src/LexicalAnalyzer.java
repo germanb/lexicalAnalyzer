@@ -24,7 +24,7 @@ public class LexicalAnalyzer {
 		while (pos < input.length() - 1) {
 
 			// Invoca al automata
-			AutomataResponse response = automaton.process(input, pos);
+			AutomatonResponse response = automaton.process(input, pos);
 
 			// Fin de la entrada
 			if (response == null) {

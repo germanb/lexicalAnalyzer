@@ -2,7 +2,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
-public class AutomataResponse {
+public class AutomatonResponse {
 
 	Integer since;
 	Integer to;

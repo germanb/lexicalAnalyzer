@@ -32,9 +32,9 @@ public class Automaton {
 		delta = Utils.getDelta(automaton);
 	}
 
-	public AutomataResponse process(String input, int since) throws Exception {
+	public AutomatonResponse process(String input, int since) throws Exception {
 
-		AutomataResponse response = new AutomataResponse();
+		AutomatonResponse response = new AutomatonResponse();
 
 		// Setea el estado inicial cada vez que se intenta procesar
 		String q = initial;
