@@ -1,0 +1,62 @@
+digraph finite_state_machine {
+	rankdir=LR;
+	size="20"
+	node [shape = doublecircle]; qr qf qe1 qe2;
+	node [shape = circle];
+	q0 -> q10 [ label = "+" ];
+	q0 -> q9 [ label = "=" ];
+	q0 -> q8 [ label = "&" ];
+	q0 -> q6 [ label = "numero" ];
+	q0 -> q4 [ label = "comillas" ];
+	q0 -> q2 [ label = "'" ];
+	q0 -> q1 [ label = "letra" ];
+	q0 -> q0 [ label = "blanco" ];	
+	q0 -> qf [ label = "*" ];
+	q0 -> q12 [ label = "/" ];
+	q0 -> qf [ label = ";" ];
+	q0 -> qf [ label = "[,],{,},(,)" ];	
+	q0 -> q0 [ label = "enter, tab" ];
+	q0 -> q11 [ label = "!" ];
+
+	q1 -> q1 [ label = "letra,numero,." ];
+	q1 -> qr [ label = ";,[,],{,},(,),',comillas" ];
+	q1 -> qf [ label = "blanco,enter,tab" ];
+	
+	q2 -> q3 [ label = "caracter" ];
+	
+	q3 -> q1 [ label = "caracter--" ];
+	q3 -> qf [ label = "'" ];
+	q3 -> qe1 [ label = "blanco" ];
+
+	q4 -> q5 [ label = "caracter-" ];
+	q4 -> qf [ label = "comillas" ];
+
+	q5 -> qe2 [ label = "enter" ];
+	q5 -> qf [ label = "comillas" ];
+	q5 -> q5 [ label = "caracter-,blanco,tab" ];
+
+	q6 -> qf [ label = ";" ];
+	q6 -> q7 [ label = "." ];
+	q6 -> q6 [ label = "numero" ];
+
+	q7 -> qf [ label = ";" ];
+	q7 -> q7 [ label = "numero" ];
+
+	q8 -> qf [ label = "&" ];
+
+	q9 -> qf [ label = "=,blanco" ];
+
+	q10 -> qf [ label = "+, blanco" ];
+
+	q11 -> qf [ label = "=" ];
+
+	q12 -> q13 [ label = "*" ];
+	q12 -> q12 [ label = "caracter---" ];
+
+	q13 -> q14 [ label = "*" ];
+	q13 -> q13 [ label = "enter, tab, blanco, caracter---" ];
+
+	q14 -> q0 [ label = "/" ];
+	q14 -> q14 [ label = "*" ];
+	q14 -> q13 [ label = "enter, tab, blanco, caracter----" ];
+}
