@@ -61,8 +61,7 @@ public class LexicalAnalyzer {
 				output.add("(" + token + "," + lexeme + ")");
 			}
 
-			// Setea la posición a partir de la cual va a tiene que seguir
-			// leyendo
+			// Setea la posiciÃ³n a partir de la cual va a tiene que seguir leyendo
 			pos = response.getTo();
 		}
 		return output;

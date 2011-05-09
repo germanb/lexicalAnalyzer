@@ -11,13 +11,13 @@ public class MainClass {
 
 		try{
 
-			// Setea las configuraciones según el lenguaje
+			// Setea las configuraciones segÃºn el lenguaje
 			Configs.setConfigs(args[0]);
 
 			// Levanta el archivo de entrada como un String
 			String input = fileToString(new File(Configs.input));
 
-			// Procesa la entrada con el analizador lexicográfico
+			// Procesa la entrada con el analizador lexicogrÃ¡fico
 			LexicalAnalyzer analizer = new LexicalAnalyzer();
 			ArrayList<String> result = analizer.analize(input);
 

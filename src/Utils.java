@@ -46,70 +46,59 @@ public class Utils {
 
 				String key = entry2.getKey();
 
-				if ("ASCII-".equals(key)) {
-
+				if ("ASCII-".equals(key))
 					putDiff(ascii, "<>/", temp2, entry2.getValue());
 
-				} else if ("ASCII--".equals(key)) {
+				else if ("ASCII--".equals(key))
+					putDiff(ascii, "<>/=", temp2, entry2.getValue());
 
-					 putDiff(ascii, "<>/=", temp2, entry2.getValue());
+				else if ("ASCII---".equals(key))
+					putDiff(ascii, "!", temp2, entry2.getValue());
 
-				} else if ("ASCII---".equals(key)) {
+				else if ("ASCII----".equals(key))
+					putDiff(ascii, "-", temp2, entry2.getValue());
 
-					 putDiff(ascii, "!", temp2, entry2.getValue());
+				else if ("ASCII----".equals(key))
+					putDiff(ascii, "->", temp2, entry2.getValue());
 
-				} else if ("ASCII----".equals(key)) {
+				else if ("letra".equals(key))
+					putDiff(Az, "", temp2, entry2.getValue());
 
-				 putDiff(ascii, "-", temp2, entry2.getValue());
+				else if ("numero".equals(key))
+					putDiff(numero, "", temp2, entry2.getValue());
 
-				} else if ("ASCII----".equals(key)) {
-
-				 putDiff(ascii, "->", temp2, entry2.getValue());
-
-				} else if ("letra".equals(key)) {
-
-					 putDiff(Az, "", temp2, entry2.getValue());
-
-				} else if ("numero".equals(key)) {
-
-					 putDiff(numero, "", temp2, entry2.getValue());
-
-				} else if ("caracter".equals(key)) {
-
+				else if ("caracter".equals(key))
 					putDiff(ascii, "", temp2, entry2.getValue());
 
-				} else if ("caracter-".equals(key)) {
-
+				else if ("caracter-".equals(key))
 					putDiff(ascii, "\"", temp2, entry2.getValue());
 
-				} else if ("caracter--".equals(key)) {
-					 putDiff(ascii, "'", temp2, entry2.getValue());
-				} else if ("caracter---".equals(key)) {
+				else if ("caracter--".equals(key))
+					putDiff(ascii, "'", temp2, entry2.getValue());
+
+				else if ("caracter---".equals(key))
 					putDiff(ascii, "*", temp2, entry2.getValue());
 
-				} else if ("caracter----".equals(key)) {
-					 putDiff(ascii, "*/", temp2, entry2.getValue());
-				} else if ("enterytab".equals(key)) {
+				else if ("caracter----".equals(key))
+					putDiff(ascii, "*/", temp2, entry2.getValue());
+
+				else if ("enter".equals(key))
+					temp2.put("\n", entry2.getValue());
+
+				else if ("enterytab".equals(key)) {
 
 					temp2.put("\n", entry2.getValue());
 					temp2.put("\t", entry2.getValue());
-				} else if ("enter".equals(key)) {
 
-					temp2.put("\n", entry2.getValue());
-				} else {
-		
+				}else
 					temp2.put(key, entry2.getValue());
-				}
-			if("q0".equals(entry2.getValue())){
-				System.out.println(temp2);System.out.println("lala");}
 			}
+
 			ret.put(entry.getKey(), temp2);
 		}
-		
-		
+
 		return ret;
 	}
-
 
 	@SuppressWarnings("unchecked")
 	private static void putDiff(ArrayList<Character> array, String delete, Map<String, String> ret, String q)

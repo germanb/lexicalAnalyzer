@@ -116,7 +116,8 @@ public class Automaton {
 	}
 
 	private String delta(String q, String c) {
-		System.out.println(q+c); //TODO: Sacar
+		// Activar para ver cómo va tomando la función delta: 
+		// System.out.println(q+c);
 		return delta.get(q).get(c);
 	}
 }
