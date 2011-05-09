@@ -1,0 +1,10 @@
+JAVA:
+  input:"inputJAVA.txt"
+  output:"salida.tok"
+  automaton:"automatonJAVA.yaml"
+  tokensConfig:"tokensConfigJAVA.config"
+HTML:
+  input:"inputHTML.txt"
+  output:"salida.tok"
+  automaton:"automatonHTML.yaml"
+  tokensConfig:"tokensConfigHTML.config"

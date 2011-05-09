@@ -1,0 +1,14 @@
+	public Automaton() throws Exception{
+
+	
+		automaton = Yaml.loadType(HashMap.class);
+
+		initial = (String) automaton.get("initial");
+
+	
+		finals = (String) automaton.get("finals");
+
+		finalsAndReset = (String) automaton.get("finalsAndReset");
+
+		delta = Utils.getDelta(automaton);
+	}

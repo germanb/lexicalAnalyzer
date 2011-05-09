@@ -11,23 +11,20 @@ public class MainClass {
 
 		try{
 
-			// Archivo de entrada
-			File inputFile = null;
-//			if ("HTML".equals(args[0])){
-//				inputFile = new File("entradaHTML.txt");
-//			}else if ("JAVA".equals(args[0])){
-				inputFile = new File("entradaJAVA.txt");
-//			}
-			String input = fileToString(inputFile);
-	
+			// Setea las configuraciones según el lenguaje
+			Configs.setConfigs(args[0]);
+
+			// Levanta el archivo de entrada como un String
+			String input = fileToString(new File(Configs.input));
+
+			// Procesa la entrada con el analizador lexicográfico
 			LexicalAnalyzer analizer = new LexicalAnalyzer();
 			ArrayList<String> result = analizer.analize(input);
-			
-			// TODO: revisar segun el practico
-			File outputFile = new File("salida.tok");
+
+			// Imprime el archivo de salida
 			String array[] = new String[result.size()];
 			array = result.toArray(array);
-			stringToFile(arrayToString(array, "\n"), outputFile);
+			stringToFile(arrayToString(array, "\n"), new File(Configs.output));
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -45,6 +42,7 @@ public class MainClass {
 		while ((line = bReader.readLine()) != null) {
 			buffer.append(line+"\n");
 		}
+		buffer.append(line+" ");
 		bReader.close();
 		fReader.close();
 
