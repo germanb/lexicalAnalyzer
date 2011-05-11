@@ -58,7 +58,7 @@ public class Utils {
 				else if ("ASCII----".equals(key))
 					putDiff(ascii, "-", temp2, entry2.getValue());
 
-				else if ("ASCII----".equals(key))
+				else if ("ASCII-----".equals(key))
 					putDiff(ascii, "->", temp2, entry2.getValue());
 
 				else if ("letra".equals(key))

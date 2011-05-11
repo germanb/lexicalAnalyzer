@@ -9,7 +9,6 @@ delta:
     '"':q4
     "'":q2
     letra:q1
-    " ":q0
     '*':qf
     '/':q12
     ';':qf
@@ -19,14 +18,13 @@ delta:
     '}':qf
     '(':qf
     ')':qf
-    enterytab:q0
+    blancoenterytab:q0
     '!':q11
   q1:
     letra:q1
     numero:q1
     '.':q1
     ';':qr
-    " ":qf
     ';':qr
     '[':qr
     ']':qr
@@ -36,7 +34,7 @@ delta:
     ')':qr
     "'":qr
     '"':qr
-    enterytab:qf
+    blancoenterytab:qf
   q2:
     caracter:q3
   q3:
@@ -74,22 +72,19 @@ delta:
     caracter---:q12
   q13:
     '*':q14
-    enterytab:q13
+    blancoenterytab:q13
     caracter---:q13
-    " ":q13
   q14:
     '/':q0
     '*':q14
-    enterytab:q13
+    blancoenterytab:q13
     caracter----:q13
-    " ":q13
-
 
 finals:qfqe2
 
 finalsAndReset:qrqe1
 
 errors:
-  qe1:"Caracter inv·lido"
-  qe2:"Cadena de texto inv·lida"
-  default:"Error lexicogr·fico"
+  qe1:"Caracter inv√°lido"
+  qe2:"Cadena de texto inv√°lida"
+  default:"Error lexicogr√°fico"
