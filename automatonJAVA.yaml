@@ -5,13 +5,18 @@ delta:
     '+':q10
     '=':q9
     '&':q8
+    '|':q8b
     numero:q6
     '"':q4
     "'":q2
     letra:q1
     '*':qf
+    '-':qf
+    '>':qf
+    '<':qf
     '/':q12
     ';':qf
+    ',':qf
     '[':qf
     ']':qf
     '{':qf
@@ -25,7 +30,7 @@ delta:
     numero:q1
     '.':q1
     ';':qr
-    ';':qr
+    ',':qr
     '[':qr
     ']':qr
     '{':qr
@@ -34,6 +39,8 @@ delta:
     ')':qr
     "'":qr
     '"':qr
+    '=':qr
+    operadores:qr
     blancoenterytab:qf
   q2:
     caracter:q3
@@ -53,23 +60,50 @@ delta:
   q6:
     numero:q6
     '.':q7
-    ';':qf
+    '=':qr
+    ';':qr
+    ',':qr
+    operadores:qr
+    blancoenterytab:qf
   q7:
-    numero:q7
-    ';':qf
+    numero:q7b
+  q7b:
+    numero:q7b
+    operadores:qr
+    '=':qr
+    ';':qr
+    ',':qr
+    blancoenterytab:qf
   q8:
     '&':qf
+    blancoenterytab:qf
+    letra:qr
+    numero:qr
+  q8b:
+    '|':qf
+    blancoenterytab:qf
+    letra:qr
+    numero:qr
   q9:
     '=':qf
-    ' ':qf
+    blancoenterytab:qf
+    letra:qr
+    numero:qr
   q10:
+    '=':q9
     '+':qf
-    ' ':qf
+    blancoenterytab:qf
+    letra:qr
+    numero:qr
   q11:
     '=':qf
   q12:
     '*':q13
-    caracter---:q12
+    ';':qr
+    ',':qr
+    letra:qr
+    numero:qr
+    blancoenterytab:qf
   q13:
     '*':q14
     blancoenterytab:q13

@@ -1,14 +1,54 @@
-	public Automaton() throws Exception{
 
-	
-		automaton = Yaml.loadType(HashMap.class);
+int a = 1 + 2 ;
 
-		initial = (String) automaton.get("initial");
+int b=1+2;
 
-	
-		finals = (String) automaton.get("finals");
+long c = 1.00 + 2.7437 ;
 
-		finalsAndReset = (String) automaton.get("finalsAndReset");
+long d=1.00+2.7437;
 
-		delta = Utils.getDelta(automaton);
-	}
+long d=1.00+2.7437;
+
+double f += 1 / 4 ;
+
+double g+=1/4;
+
+double h += 1.999 / 4.07777 ;
+
+double i+=1.4324/4;
+
+
+"mecha
+mistico"
+
+ddddddddddddddddddddddddddddddddd
+
+int cant1 = 0, cant2 = 0
+
+String l, h, k;
+
+
+boolean f && g ;
+
+boolean f&&g;
+
+boolean f || g ;
+
+boolean f||g;
+
+
+boolean f & g ;
+
+boolean f&g;
+
+boolean f | g ;
+
+boolean f|g;
+
+boolean f | g ;
+
+boolean f|g;
+
+boolean f | g ;
+
+boolean f|g;

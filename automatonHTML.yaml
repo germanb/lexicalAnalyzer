@@ -5,6 +5,7 @@ delta:
     '<':q1
     '>':qf
     '/':qf
+    '=':qf
     blancoenterytab:q0
     ASCII-:q2
 

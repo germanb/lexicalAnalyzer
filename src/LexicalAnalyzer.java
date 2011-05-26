@@ -34,7 +34,8 @@ public class LexicalAnalyzer {
 			// Checkeo de errores
 			if (response.isError()) {
 
-				output.add("(99," + response.getErrorDetail() + ") ");
+				output.add("error: "+response.getErrorDetail());
+				output.add("(99," + StringUtils.trimToEmpty(response.getLexeme()) + ") ");
 
 			} else {
 

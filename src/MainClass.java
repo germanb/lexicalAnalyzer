@@ -15,7 +15,7 @@ public class MainClass {
 			Configs.setConfigs(args[0]);
 
 			// Levanta el archivo de entrada como un String
-			String input = fileToString(new File(Configs.input));
+			String input = fileToString(new File("input"+args[0]+".txt"));
 
 			// Procesa la entrada con el analizador lexicográfico
 			LexicalAnalyzer analizer = new LexicalAnalyzer();
@@ -24,13 +24,13 @@ public class MainClass {
 			// Imprime el archivo de salida
 			String array[] = new String[result.size()];
 			array = result.toArray(array);
-			stringToFile(arrayToString(array, "\n"), new File(Configs.output));
+			stringToFile(arrayToString(array, "\n"), new File("salida.tok"));
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	private static String fileToString(File file) throws Exception {
 		StringBuffer buffer = new StringBuffer();
 		String line;
